@@ -1,0 +1,262 @@
+1  docker run --name docker-nginx42 -p 80:80 nginx
+    2  docker ps -a
+    3  docker rm -f 3897d770918f
+    4  history
+    5  mkdir -p ~/docker-nginx/html
+    6  cd ~/docker-nginx/html
+    7  vi index.html
+    8  ls
+    9  docker run --name docker-nginx -p 80:80 -d -v ~/docker-nginx/html:/usr/share/nginx/html nginx
+   10  ls
+   11  vi index.html 
+   12  pwd
+   13  docker run -it -d -p 8080:8080 jenkins/jenkins:latest
+   14  cat /var/jenkins_home/secrets/initialAdminPassword
+   15  docker ps
+   16  docker exec -it b1f980c2a1f2 bin/bash
+   17  history
+   18  time docker run --rm hello-world
+   19  docker ps
+   20  date
+   21  docker run --rm alpine date
+   22  docker run -d alpine sleep 1000
+   23  docker ps
+   24  docker stats
+   25  for i in {1..10}; do docker run -d --rm alpine sleep 1000; done
+   26  docker ps
+   27  history
+
+
+sudo -i
+  sudo apt-get update && sudo apt install docker.io -y
+
+
+mkdir -p ~/docker-nginx/html
+cd ~/docker-nginx/html
+vi index.html
+
+<html>
+  <head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <title>Docker nginx Tutorial</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hello Learning team batch42 with Sid , Rahul , bhavik , Nisha</h1>
+      <p>This nginx page is brought to you by Docker in front of sri ram arun ravi naveen sabita </p>
+    </div>
+  </body>
+</html>
+
+
+docker run --name docker-nginx -p 80:80 -d -v ~/docker-nginx/html:/usr/share/nginx/html nginx
+
+
+
+
+
+-------------cloudwebsite code 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudDevOpsHub | Learn Cloud & DevOps with AI</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fb;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 30px;
+            background-color: #ff9800;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e68900;
+        }
+
+        section {
+            padding: 70px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.4rem;
+            color: #203a43;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #0f2027;
+            margin-bottom: 15px;
+        }
+
+        .cta {
+            background: #203a43;
+            color: #fff;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background: #0f2027;
+            color: #bbb;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>CloudDevOpsHub</h1>
+    <p>
+        Learn Cloud, DevOps & AI from Industry Experts.<br>
+        Hands-On Training • Live Projects • Job-Ready Skills
+    </p>
+    <a href="#programs" class="btn">Explore Programs</a>
+</header>
+
+<section id="about">
+    <div class="section-title">
+        <h2>About Us</h2>
+    </div>
+    <p style="text-align:center; max-width:900px; margin:auto;">
+        CloudDevOpsHub is an EdTech platform focused on building real-world 
+        Cloud & DevOps skills. We help students and professionals upskill 
+        through structured learning, live sessions, hands-on labs, and 
+        career-oriented guidance.
+    </p>
+</section>
+
+<section id="programs">
+    <div class="section-title">
+        <h2>Our Programs</h2>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>AWS & Cloud Computing</h3>
+            <p>Learn AWS fundamentals, VPC, EC2, S3, IAM, and real-world architecture.</p>
+        </div>
+
+        <div class="card">
+            <h3>DevOps Engineering</h3>
+            <p>Docker, Kubernetes, CI/CD, Jenkins, Git, Terraform & automation.</p>
+        </div>
+
+        <div class="card">
+            <h3>Multi-Cloud + AI</h3>
+            <p>Work with AWS, Azure, GCP and integrate AI tools into DevOps workflows.</p>
+        </div>
+    </div>
+</section>
+
+<section id="why">
+    <div class="section-title">
+        <h2>Why Choose CloudDevOpsHub?</h2>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Live Hands-On Sessions</h3>
+            <p>Real-time practical training, not just theory.</p>
+        </div>
+
+        <div class="card">
+            <h3>Industry-Ready Curriculum</h3>
+            <p>Designed based on real job descriptions & interviews.</p>
+        </div>
+
+        <div class="card">
+            <h3>Career Support</h3>
+            <p>Resume building, interview preparation & mentorship.</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Ready to Start Your Cloud & DevOps Journey?</h2>
+    <p>Join our live bootcamps and become job-ready faster.</p>
+    <a href="#" class="btn">Join Now</a>
+</section>
+
+<footer>
+    © 2026 CloudDevOpsHub | Empowering Cloud & DevOps Careers
+</footer>
+
+</body>
+</html>
+
+
+----------------
+
+
+ 13  docker run -it -d -p 8080:8080 jenkins/jenkins:latest
+   14  cat /var/jenkins_home/secrets/initialAdminPassword
+   15  docker ps
+   16  docker exec -it b1f980c2a1f2 bin/bash
+   17  history
